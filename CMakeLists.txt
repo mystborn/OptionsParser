@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(OptionsParser LANGUAGES C VERSION 0.1.0)
+set(CMAKE_C_STANDARD 11)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+include_directories(Source)
+add_subdirectory(Source)
+add_subdirectory(Example)
+add_subdirectory(Tests)
+
+enable_testing()
+add_test(NAME parser_tests COMMAND ${EXECUTABLE_OUTPUT_PATH}/options_tests.exe)
